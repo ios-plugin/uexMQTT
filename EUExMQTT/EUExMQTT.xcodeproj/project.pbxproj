@@ -1,0 +1,346 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		42241B0D1D38C57800F32386 /* EUExMQTT.m in Sources */ = {isa = PBXBuildFile; fileRef = 42241B0C1D38C57800F32386 /* EUExMQTT.m */; };
+		42241B101D38C59800F32386 /* uexMQTTClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 42241B0F1D38C59800F32386 /* uexMQTTClient.m */; };
+		4229AD2D1D38E84A00AAF8CD /* MQTTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4229AD2A1D38E84A00AAF8CD /* MQTTClient.framework */; };
+		4229AD2E1D38E84A00AAF8CD /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4229AD2B1D38E84A00AAF8CD /* ReactiveCocoa.framework */; };
+		4229AD2F1D38E84A00AAF8CD /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4229AD2C1D38E84A00AAF8CD /* SocketRocket.framework */; };
+		42AD0CAE1D3CE43000FFA129 /* MQTTClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4229AD2A1D38E84A00AAF8CD /* MQTTClient.framework */; };
+		42AD0CAF1D3CE43000FFA129 /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4229AD2B1D38E84A00AAF8CD /* ReactiveCocoa.framework */; };
+		42AD0CB01D3CE43000FFA129 /* SocketRocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4229AD2C1D38E84A00AAF8CD /* SocketRocket.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		424AD04B1C25285300EEC1F8 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 16;
+			files = (
+				42AD0CAE1D3CE43000FFA129 /* MQTTClient.framework in CopyFiles */,
+				42AD0CAF1D3CE43000FFA129 /* ReactiveCocoa.framework in CopyFiles */,
+				42AD0CB01D3CE43000FFA129 /* SocketRocket.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2EAB41DAE334F644081B085D /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
+		42241B0B1D38C57800F32386 /* EUExMQTT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExMQTT.h; sourceTree = "<group>"; };
+		42241B0C1D38C57800F32386 /* EUExMQTT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EUExMQTT.m; sourceTree = "<group>"; };
+		42241B0E1D38C59800F32386 /* uexMQTTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uexMQTTClient.h; sourceTree = "<group>"; };
+		42241B0F1D38C59800F32386 /* uexMQTTClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = uexMQTTClient.m; sourceTree = "<group>"; };
+		4229AD2A1D38E84A00AAF8CD /* MQTTClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MQTTClient.framework; sourceTree = "<group>"; };
+		4229AD2B1D38E84A00AAF8CD /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = "<group>"; };
+		4229AD2C1D38E84A00AAF8CD /* SocketRocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SocketRocket.framework; sourceTree = "<group>"; };
+		424AD04D1C25285300EEC1F8 /* libuexMQTT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuexMQTT.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F6E0188A7D5B3A865919897 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		5619A02D90999FC710A655E9 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		58E3E4D3E30B23272CC5CAFB /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
+		68E23BE2C2D342EFA64B6BF2 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		82FEF2E778D6156469C6E958 /* EUExBase+Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EUExBase+Bundle.h"; sourceTree = "<group>"; };
+		8C7E6EB9CB2B8A6E4D6EAE4F /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
+		A0BAF51A338B8BF4F2F4A649 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		A13D640277B4428CECA09D19 /* EUExBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBaseDefine.h; sourceTree = "<group>"; };
+		A3CF446FF9C590685AB62575 /* MD5Digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5Digest.h; sourceTree = "<group>"; };
+		A6922F567B295D3537FFFF43 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		C8C6602B6F9CC2353AA9D376 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		D47B8DD1C40E46FEA211F234 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		424AD04A1C25285300EEC1F8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4229AD2D1D38E84A00AAF8CD /* MQTTClient.framework in Frameworks */,
+				4229AD2F1D38E84A00AAF8CD /* SocketRocket.framework in Frameworks */,
+				4229AD2E1D38E84A00AAF8CD /* ReactiveCocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		424AD0441C25285300EEC1F8 = {
+			isa = PBXGroup;
+			children = (
+				E28E881B3F434C3AB1E94021 /* EUExMQTT */,
+				424AD04E1C25285300EEC1F8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		424AD04E1C25285300EEC1F8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				424AD04D1C25285300EEC1F8 /* libuexMQTT.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		734A6182839C1B2A77B87630 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				4F6E0188A7D5B3A865919897 /* JSON.h */,
+				2EAB41DAE334F644081B085D /* JSONParser.h */,
+				A3CF446FF9C590685AB62575 /* MD5Digest.h */,
+				5619A02D90999FC710A655E9 /* NSObject+SBJSON.h */,
+				C8C6602B6F9CC2353AA9D376 /* NSString+SBJSON.h */,
+				A0BAF51A338B8BF4F2F4A649 /* SBJSON.h */,
+				68E23BE2C2D342EFA64B6BF2 /* SBJsonBase.h */,
+				D47B8DD1C40E46FEA211F234 /* SBJsonParser.h */,
+				A6922F567B295D3537FFFF43 /* SBJsonWriter.h */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		96B18E9F05572A0DE7D11861 /* sourceCode */ = {
+			isa = PBXGroup;
+			children = (
+				734A6182839C1B2A77B87630 /* JSON */,
+				42241B0E1D38C59800F32386 /* uexMQTTClient.h */,
+				42241B0F1D38C59800F32386 /* uexMQTTClient.m */,
+			);
+			path = sourceCode;
+			sourceTree = "<group>";
+		};
+		C010C1965E266A090051A02D /* engineHeader */ = {
+			isa = PBXGroup;
+			children = (
+				58E3E4D3E30B23272CC5CAFB /* EUtility.h */,
+				82FEF2E778D6156469C6E958 /* EUExBase+Bundle.h */,
+				8C7E6EB9CB2B8A6E4D6EAE4F /* EUExBase.h */,
+				A13D640277B4428CECA09D19 /* EUExBaseDefine.h */,
+			);
+			path = engineHeader;
+			sourceTree = "<group>";
+		};
+		E28E881B3F434C3AB1E94021 /* EUExMQTT */ = {
+			isa = PBXGroup;
+			children = (
+				4229AD2A1D38E84A00AAF8CD /* MQTTClient.framework */,
+				4229AD2B1D38E84A00AAF8CD /* ReactiveCocoa.framework */,
+				4229AD2C1D38E84A00AAF8CD /* SocketRocket.framework */,
+				C010C1965E266A090051A02D /* engineHeader */,
+				96B18E9F05572A0DE7D11861 /* sourceCode */,
+				42241B0B1D38C57800F32386 /* EUExMQTT.h */,
+				42241B0C1D38C57800F32386 /* EUExMQTT.m */,
+			);
+			path = EUExMQTT;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		424AD04C1C25285300EEC1F8 /* EUExMQTT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 424AD0561C25285300EEC1F8 /* Build configuration list for PBXNativeTarget "EUExMQTT" */;
+			buildPhases = (
+				424AD0491C25285300EEC1F8 /* Sources */,
+				424AD04A1C25285300EEC1F8 /* Frameworks */,
+				424AD04B1C25285300EEC1F8 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EUExMQTT;
+			productName = EUExMQTT;
+			productReference = 424AD04D1C25285300EEC1F8 /* libuexMQTT.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		424AD0451C25285300EEC1F8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = AppCan;
+				TargetAttributes = {
+					424AD04C1C25285300EEC1F8 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 424AD0481C25285300EEC1F8 /* Build configuration list for PBXProject "EUExMQTT" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 424AD0441C25285300EEC1F8;
+			productRefGroup = 424AD04E1C25285300EEC1F8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				424AD04C1C25285300EEC1F8 /* EUExMQTT */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		424AD0491C25285300EEC1F8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				42241B0D1D38C57800F32386 /* EUExMQTT.m in Sources */,
+				42241B101D38C59800F32386 /* uexMQTTClient.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		424AD0541C25285300EEC1F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		424AD0551C25285300EEC1F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		424AD0571C25285300EEC1F8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexMQTT";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExMQTT/sourceCode",
+					"$(PROJECT_DIR)/EUExMQTT",
+				);
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = uexMQTT;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7";
+			};
+			name = Debug;
+		};
+		424AD0581C25285300EEC1F8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)/uexMQTT";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/EUExMQTT/sourceCode",
+					"$(PROJECT_DIR)/EUExMQTT",
+				);
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = uexMQTT;
+				SKIP_INSTALL = YES;
+				VALID_ARCHS = "arm64 armv7";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		424AD0481C25285300EEC1F8 /* Build configuration list for PBXProject "EUExMQTT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				424AD0541C25285300EEC1F8 /* Debug */,
+				424AD0551C25285300EEC1F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		424AD0561C25285300EEC1F8 /* Build configuration list for PBXNativeTarget "EUExMQTT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				424AD0571C25285300EEC1F8 /* Debug */,
+				424AD0581C25285300EEC1F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 424AD0451C25285300EEC1F8 /* Project object */;
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<uexplugins>
+    <plugin
+        uexName="uexMQTT" version="3.3.0" build="0">
+        <info>0:uexMQTT for iOS</info>
+    </plugin>
+</uexplugins>
