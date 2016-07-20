@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <uexplugins>
     <plugin name="uexMQTT">
-    	<!--
-    	<method name="aMethod"></method>
-     	-->
+         <method name="init"></method>
+         <method name="connect"></method>
+         <method name="disconnect"></method>
+         <method name="subscribe"></method>
+         <method name="unsubscribe"></method>
+         <method name="publish"></method>
     </plugin>
 </uexplugins>
