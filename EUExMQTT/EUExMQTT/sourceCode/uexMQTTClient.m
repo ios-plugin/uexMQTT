@@ -138,6 +138,7 @@ static uexMQTTClient *client = nil;
                                         [dict setValue:identifier forKey:@"id"];
                                         [dict setValue:@(pubmid) forKey:@"mid"];
                                         [dict setValue:topic forKey:kUexMQTTTopicKey];
+                                        [dict setValue:dataStr forKey:@"data"];
                                         [self callbackWithKeyPath:@"cbPublish" object:dict];
                                     }];
 }
@@ -179,6 +180,7 @@ static uexMQTTClient *client = nil;
     BOOL isSuccess = YES;
     NSMutableDictionary *dict = [NSMutableDictionary dictionary];
     if (error) {
+        isSuccess = NO;
         error = uexError(error);
         [dict setValue:@(error.code) forKey:kUexMQTTErrorCodeKey];
         [dict setValue:error.localizedDescription forKey:kUexMQTTErrorStringKey];
