@@ -1,10 +1,10 @@
 /**
  *
- *	@file   	: EUExMQTT.h  in EUExMQTT
+ *	@file   	: AppCanGlobalObjectGetter.h  in AppCanKit
  *
  *	@author 	: CeriNo 
  * 
- *	@date   	: Created on 16/7/15.
+ *	@date   	: Created on 16/5/31.
  *
  *	@copyright 	: 2016 The AppCan Open Source Project.
  *
@@ -22,7 +22,10 @@
  */
  
 #import <Foundation/Foundation.h>
-#import <AppCanKit/AppCanKit.h>
-@interface EUExMQTT : EUExBase
+
+@protocol AppCanGlobalObjectGetter <NSObject>
+
+- (id<AppCanWebViewEngineObject>)getAppCanRootWebViewEngine;
+- (id<AppCanWidgetObject>)getAppCanMainWidget;
 
 @end

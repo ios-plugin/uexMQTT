@@ -12,6 +12,7 @@
 		4229AD2D1D38E84A00AAF8CD /* MQTTClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4229AD2A1D38E84A00AAF8CD /* MQTTClient.framework */; };
 		4229AD2E1D38E84A00AAF8CD /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4229AD2B1D38E84A00AAF8CD /* ReactiveCocoa.framework */; };
 		4229AD2F1D38E84A00AAF8CD /* SocketRocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4229AD2C1D38E84A00AAF8CD /* SocketRocket.framework */; };
+		4257D71B1DF00919004DE380 /* AppCanKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4257D71A1DF00919004DE380 /* AppCanKit.framework */; };
 		42AD0CAE1D3CE43000FFA129 /* MQTTClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4229AD2A1D38E84A00AAF8CD /* MQTTClient.framework */; };
 		42AD0CAF1D3CE43000FFA129 /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4229AD2B1D38E84A00AAF8CD /* ReactiveCocoa.framework */; };
 		42AD0CB01D3CE43000FFA129 /* SocketRocket.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 4229AD2C1D38E84A00AAF8CD /* SocketRocket.framework */; };
@@ -33,7 +34,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2EAB41DAE334F644081B085D /* JSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONParser.h; sourceTree = "<group>"; };
 		42241B0B1D38C57800F32386 /* EUExMQTT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExMQTT.h; sourceTree = "<group>"; };
 		42241B0C1D38C57800F32386 /* EUExMQTT.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EUExMQTT.m; sourceTree = "<group>"; };
 		42241B0E1D38C59800F32386 /* uexMQTTClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uexMQTTClient.h; sourceTree = "<group>"; };
@@ -42,18 +42,7 @@
 		4229AD2B1D38E84A00AAF8CD /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = "<group>"; };
 		4229AD2C1D38E84A00AAF8CD /* SocketRocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SocketRocket.framework; sourceTree = "<group>"; };
 		424AD04D1C25285300EEC1F8 /* libuexMQTT.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libuexMQTT.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F6E0188A7D5B3A865919897 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		5619A02D90999FC710A655E9 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
-		58E3E4D3E30B23272CC5CAFB /* EUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUtility.h; sourceTree = "<group>"; };
-		68E23BE2C2D342EFA64B6BF2 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
-		82FEF2E778D6156469C6E958 /* EUExBase+Bundle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "EUExBase+Bundle.h"; sourceTree = "<group>"; };
-		8C7E6EB9CB2B8A6E4D6EAE4F /* EUExBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBase.h; sourceTree = "<group>"; };
-		A0BAF51A338B8BF4F2F4A649 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
-		A13D640277B4428CECA09D19 /* EUExBaseDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EUExBaseDefine.h; sourceTree = "<group>"; };
-		A3CF446FF9C590685AB62575 /* MD5Digest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MD5Digest.h; sourceTree = "<group>"; };
-		A6922F567B295D3537FFFF43 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		C8C6602B6F9CC2353AA9D376 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
-		D47B8DD1C40E46FEA211F234 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		4257D71A1DF00919004DE380 /* AppCanKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AppCanKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +52,7 @@
 			files = (
 				4229AD2D1D38E84A00AAF8CD /* MQTTClient.framework in Frameworks */,
 				4229AD2F1D38E84A00AAF8CD /* SocketRocket.framework in Frameworks */,
+				4257D71B1DF00919004DE380 /* AppCanKit.framework in Frameworks */,
 				4229AD2E1D38E84A00AAF8CD /* ReactiveCocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,50 +76,22 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		734A6182839C1B2A77B87630 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				4F6E0188A7D5B3A865919897 /* JSON.h */,
-				2EAB41DAE334F644081B085D /* JSONParser.h */,
-				A3CF446FF9C590685AB62575 /* MD5Digest.h */,
-				5619A02D90999FC710A655E9 /* NSObject+SBJSON.h */,
-				C8C6602B6F9CC2353AA9D376 /* NSString+SBJSON.h */,
-				A0BAF51A338B8BF4F2F4A649 /* SBJSON.h */,
-				68E23BE2C2D342EFA64B6BF2 /* SBJsonBase.h */,
-				D47B8DD1C40E46FEA211F234 /* SBJsonParser.h */,
-				A6922F567B295D3537FFFF43 /* SBJsonWriter.h */,
-			);
-			path = JSON;
-			sourceTree = "<group>";
-		};
 		96B18E9F05572A0DE7D11861 /* sourceCode */ = {
 			isa = PBXGroup;
 			children = (
-				734A6182839C1B2A77B87630 /* JSON */,
 				42241B0E1D38C59800F32386 /* uexMQTTClient.h */,
 				42241B0F1D38C59800F32386 /* uexMQTTClient.m */,
 			);
 			path = sourceCode;
 			sourceTree = "<group>";
 		};
-		C010C1965E266A090051A02D /* engineHeader */ = {
-			isa = PBXGroup;
-			children = (
-				58E3E4D3E30B23272CC5CAFB /* EUtility.h */,
-				82FEF2E778D6156469C6E958 /* EUExBase+Bundle.h */,
-				8C7E6EB9CB2B8A6E4D6EAE4F /* EUExBase.h */,
-				A13D640277B4428CECA09D19 /* EUExBaseDefine.h */,
-			);
-			path = engineHeader;
-			sourceTree = "<group>";
-		};
 		E28E881B3F434C3AB1E94021 /* EUExMQTT */ = {
 			isa = PBXGroup;
 			children = (
+				4257D71A1DF00919004DE380 /* AppCanKit.framework */,
 				4229AD2A1D38E84A00AAF8CD /* MQTTClient.framework */,
 				4229AD2B1D38E84A00AAF8CD /* ReactiveCocoa.framework */,
 				4229AD2C1D38E84A00AAF8CD /* SocketRocket.framework */,
-				C010C1965E266A090051A02D /* engineHeader */,
 				96B18E9F05572A0DE7D11861 /* sourceCode */,
 				42241B0B1D38C57800F32386 /* EUExMQTT.h */,
 				42241B0C1D38C57800F32386 /* EUExMQTT.m */,

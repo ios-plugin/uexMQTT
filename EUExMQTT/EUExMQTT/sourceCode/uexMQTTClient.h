@@ -24,6 +24,7 @@
 #import <Foundation/Foundation.h>
 #import <MQTTClient/MQTTClient.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <AppCanKit/AppCanKit.h>
 #define UEX_MQTT_CLIENT ([uexMQTTClient sharedClient])
 
 
@@ -46,18 +47,20 @@
                   willMsg:(NSData *)willMsg
                 willTopic:(NSString *)willTopic
                   willQos:(MQTTQosLevel)willQos
-           willRetainFlag:(BOOL)willRetainFlag;
+           willRetainFlag:(BOOL)willRetainFlag
+                 callback:(ACJSFunctionRef *)callback;
 
 - (void)disconnect;
 
-- (void)publishDataString:(NSString *)dataStr
-                  onTopic:(NSString *)topic
-                      qos:(MQTTQosLevel)qos
+- (UInt16)publishDataString:(NSString *)dataStr
+                    onTopic:(NSString *)topic
+                        qos:(MQTTQosLevel)qos
                identifier:(NSString *)identifier
-               retainFlag:(BOOL)retainFlag;
+                 retainFlag:(BOOL)retainFlag
+                   callback:(ACJSFunctionRef *)callback;
 
-- (void)subscribeTopic:(NSString *)topic qos:(MQTTQosLevel)qos;
+- (void)subscribeTopic:(NSString *)topic qos:(MQTTQosLevel)qos callback:(ACJSFunctionRef *)callback;
 
-- (void)unsubscibeTopic:(NSString *)topic;
+- (void)unsubscibeTopic:(NSString *)topic callback:(ACJSFunctionRef *)callback;
 
 @end

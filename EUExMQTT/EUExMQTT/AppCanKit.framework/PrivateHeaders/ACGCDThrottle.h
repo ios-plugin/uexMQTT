@@ -1,10 +1,10 @@
 /**
  *
- *	@file   	: EUExMQTT.h  in EUExMQTT
+ *	@file   	: ACGCDThrottle.h  in AppCanKit
  *
- *	@author 	: CeriNo 
+ *	@author 	: CeriNo
  * 
- *	@date   	: Created on 16/7/15.
+ *	@date   	: 2016/11/22
  *
  *	@copyright 	: 2016 The AppCan Open Source Project.
  *
@@ -20,9 +20,12 @@
  *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
- 
-#import <Foundation/Foundation.h>
-#import <AppCanKit/AppCanKit.h>
-@interface EUExMQTT : EUExBase
 
-@end
+
+#import <Foundation/Foundation.h>
+#import <AppCanKit/ACMetaMacros.h>
+
+
+
+
+APPCAN_EXPORT void ac_dispatch_throttle(NSTimeInterval threshold, dispatch_queue_t queue, dispatch_block_t block);

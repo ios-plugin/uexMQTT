@@ -23,8 +23,7 @@
 
 #import "uexMQTTClient.h"
 
-#import "JSON.h"
-#import "EUtility.h"
+
 
 
 @interface uexMQTTClient()<MQTTSessionDelegate>
@@ -54,18 +53,31 @@ static uexMQTTClient *client = nil;
     dispatch_once(&onceToken, ^{
         client = [[self alloc] init];
         NSDictionary *dict = @{@"status":@(MQTTSessionStatusCreated)};
-        [client callbackWithKeyPath:@"onStatusChange" object:dict];
+        [AppCanRootWebViewEngine() callbackWithFunctionKeyPath:@"uexMQTT.onStatusChange" arguments:ACArgsPack(dict.ac_JSONFragment)];
     });
 }
 
 
 
 
-- (void)connectWithServer:(NSString *)server port:(UInt16)port username:(NSString *)username password:(NSString *)password keepAliveInterval:(UInt16)keepAliveInterval clientId:(NSString *)clientId willMsg:(NSData *)willMsg willTopic:(NSString *)willTopic willQos:(MQTTQosLevel)willQos willRetainFlag:(BOOL)willRetainFlag{
+- (void)connectWithServer:(NSString *)server
+                     port:(UInt16)port
+                 username:(NSString *)username
+                 password:(NSString *)password
+        keepAliveInterval:(UInt16)keepAliveInterval
+                 clientId:(NSString *)clientId
+                  willMsg:(NSData *)willMsg
+                willTopic:(NSString *)willTopic
+                  willQos:(MQTTQosLevel)willQos
+           willRetainFlag:(BOOL)willRetainFlag
+                 callback:(ACJSFunctionRef *)callback{
+    
     if (self.mqtt.status == MQTTSessionStatusConnecting ||
         self.mqtt.status == MQTTSessionStatusConnected) {
-        NSMutableDictionary *dict = [self resultDictWithError:connectAlreadyExistError()];
-        [self callbackWithKeyPath:@"cbConnect" object:dict];
+        NSError *error = connectAlreadyExistError();
+        NSMutableDictionary *dict = [self resultDictWithError:error];
+        [AppCanRootWebViewEngine() callbackWithFunctionKeyPath:@"uexMQTT.cbConnect" arguments:ACArgsPack(dict.ac_JSONFragment)];
+        [callback executeWithArguments:ACArgsPack(@(error.code),error.localizedDescription)];
         return;
     }
     [self reset];
@@ -87,15 +99,14 @@ static uexMQTTClient *client = nil;
     
     self.mqtt.clientId = clientId;
     self.mqtt.keepAliveInterval = keepAliveInterval;
-    @weakify(self);
+
     [self.mqtt connectWithConnectHandler:^(NSError *error) {
-        @strongify(self);
         NSMutableDictionary *dict = [self resultDictWithError:error];
-        [self callbackWithKeyPath:@"cbConnect" object:dict];
+        [AppCanRootWebViewEngine() callbackWithFunctionKeyPath:@"uexMQTT.cbConnect" arguments:ACArgsPack(dict.ac_JSONFragment)];
+        [callback executeWithArguments:ACArgsPack(@(error.code),error.localizedDescription)];
     }];
     
     [self.cleanDisposables addDisposable:[[self rac_signalForSelector:@selector(newMessage:data:onTopic:qos:retained:mid:) fromProtocol:@protocol(MQTTSessionDelegate)] subscribeNext:^(RACTuple *msgTuple) {
-        @strongify(self);
         RACTupleUnpack(__unused MQTTSession *session,NSData *data,NSString *topic,NSNumber *qosNum,NSNumber *retainFlag,NSNumber *mid) = msgTuple;
         NSString *dataStr  = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
         NSMutableDictionary *dict = [NSMutableDictionary dictionary];
@@ -104,7 +115,8 @@ static uexMQTTClient *client = nil;
         [dict setValue:qosNum forKey:@"qos"];
         [dict setValue:retainFlag forKey:@"retainFlag"];
         [dict setValue:mid forKey:@"mid"];
-        [self callbackWithKeyPath:@"onNewMessage" object:dict];
+        
+        [AppCanRootWebViewEngine() callbackWithFunctionKeyPath:@"uexMQTT.onNewMessage" arguments:ACArgsPack(dict.ac_JSONFragment)];
     }]];
 
     [self.cleanDisposables addDisposable:[[RACObserve(self.mqtt, status)
@@ -113,20 +125,20 @@ static uexMQTTClient *client = nil;
            return ![filter containsObject:value];
     }].distinctUntilChanged
        subscribeNext:^(NSNumber *status) {
-        @strongify(self);
         NSDictionary *dict = @{@"status":status};
-        [self callbackWithKeyPath:@"onStatusChange" object:dict];
+        [AppCanRootWebViewEngine() callbackWithFunctionKeyPath:@"uexMQTT.onStatusChange" arguments:ACArgsPack(dict.ac_JSONFragment)];
+
     }]];
 }
 
 - (void)disconnect{
     [self.mqtt disconnect];
-    [self callbackWithKeyPath:@"cbDisconnect" object:@{kUexMQTTIsSuccessKey:@(YES)}];
+    [AppCanRootWebViewEngine() callbackWithFunctionKeyPath:@"uexMQTT.cbDisconnect" arguments:ACArgsPack(@{kUexMQTTIsSuccessKey:@(YES)}.ac_JSONFragment)];
     
 }
 
 
-- (void)publishDataString:(NSString *)dataStr onTopic:(NSString *)topic qos:(MQTTQosLevel)qos identifier:(NSString *)identifier retainFlag:(BOOL)retainFlag{
+- (UInt16)publishDataString:(NSString *)dataStr onTopic:(NSString *)topic qos:(MQTTQosLevel)qos identifier:(NSString *)identifier retainFlag:(BOOL)retainFlag callback:(ACJSFunctionRef *)callback{
     @weakify(self);
     __block UInt16 pubmid = [self.mqtt publishData:[dataStr dataUsingEncoding:NSUTF8StringEncoding]
                                            onTopic:topic
@@ -139,29 +151,34 @@ static uexMQTTClient *client = nil;
                                         [dict setValue:@(pubmid) forKey:@"mid"];
                                         [dict setValue:topic forKey:kUexMQTTTopicKey];
                                         [dict setValue:dataStr forKey:@"data"];
-                                        [self callbackWithKeyPath:@"cbPublish" object:dict];
+                                        [AppCanRootWebViewEngine() callbackWithFunctionKeyPath:@"uexMQTT.cbPublish" arguments:ACArgsPack(dict.ac_JSONFragment)];
+                                        [callback executeWithArguments:ACArgsPack(@(error.code),error.localizedDescription)];
+
                                     }];
+    return pubmid;
 }
 
 
-- (void)subscribeTopic:(NSString *)topic qos:(MQTTQosLevel)qos{
+- (void)subscribeTopic:(NSString *)topic qos:(MQTTQosLevel)qos callback:(ACJSFunctionRef *)callback{
     @weakify(self);
     [self.mqtt subscribeToTopic:topic atLevel:qos subscribeHandler:^(NSError *error, NSArray<NSNumber *> *gQoss) {
         @strongify(self);
         NSMutableDictionary *dict = [self resultDictWithError:error];
         [dict setValue:gQoss forKey:@"grantedQoss"];
         [dict setValue:topic forKey:kUexMQTTTopicKey];
-        [self callbackWithKeyPath:@"cbSubscribe" object:dict];
+        [AppCanRootWebViewEngine() callbackWithFunctionKeyPath:@"uexMQTT.cbSubscribe" arguments:ACArgsPack(dict.ac_JSONFragment)];
+        [callback executeWithArguments:ACArgsPack(@(error.code),error ? error.localizedDescription : topic)];
     }];
 }
 
-- (void)unsubscibeTopic:(NSString *)topic{
+- (void)unsubscibeTopic:(NSString *)topic callback:(ACJSFunctionRef *)callback{
     @weakify(self);
     [self.mqtt unsubscribeTopic:topic unsubscribeHandler:^(NSError *error) {
         @strongify(self);
         NSMutableDictionary *dict = [self resultDictWithError:error];
         [dict setValue:topic forKey:kUexMQTTTopicKey];
-        [self callbackWithKeyPath:@"cbUnsubscribe" object:dict];
+        [AppCanRootWebViewEngine() callbackWithFunctionKeyPath:@"uexMQTT.cbUnsubscribe" arguments:ACArgsPack(dict.ac_JSONFragment)];
+        [callback executeWithArguments:ACArgsPack(@(error.code),error ? error.localizedDescription : topic)];
     }];
     
 
@@ -171,10 +188,7 @@ static uexMQTTClient *client = nil;
 
 #pragma mark - Privete
 
-- (void)callbackWithKeyPath:(NSString *)keyPath object:(NSDictionary *)obj{
-    NSString *jsStr = [NSString stringWithFormat:@"if(uexMQTT.%@){uexMQTT.%@(%@);}",keyPath,keyPath,obj.JSONFragment];
-    [EUtility evaluatingJavaScriptInRootWnd:jsStr];
-}
+
 
 - (NSMutableDictionary *)resultDictWithError:(NSError *)error{
     BOOL isSuccess = YES;
